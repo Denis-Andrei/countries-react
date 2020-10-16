@@ -1,0 +1,33 @@
+@import '../../assets/main.scss';
+
+.country{
+    width: 25rem;
+    margin: 3rem 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px $LM-dark-gray;
+    border-radius: 5px;
+    
+    &__info{
+        padding: 1rem 2rem;
+        text-align: left;
+    }
+    &__flag{
+        width: 100%;
+        // height: 50%;
+        // object-fit: cover;
+    }
+
+    &__name{
+        font-size: 2.2rem;
+    }
+
+    &__population, &__region, &__capital{
+        font-size: 1.6rem;
+        margin: .5rem 0;
+    }
+
+    &__bold-text{
+        font-weight: 500;
+    }
+
+}

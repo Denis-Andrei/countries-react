@@ -1,0 +1,33 @@
+@import '../../assets/main.scss';
+
+.search{
+    display: flex;
+    justify-content: space-between;
+    color: $LM-dark-gray;
+
+    &__box{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    &__icon{
+        font-size: 2rem;
+        position: absolute;
+        left: 2rem;
+    }
+    &__input, &__select{
+        padding: 2rem 5rem;
+        width: 35rem;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        box-shadow: 0px 0px 3px $LM-dark-gray;
+    }
+
+
+    &__select{
+        width: 20rem;
+        outline: none;
+        padding: 1rem;
+    }
+}
