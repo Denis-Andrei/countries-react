@@ -1,27 +1,38 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './_search.scss';
 
-export default function Search({getSearchValue}) {
+export default function Search({filterCountries}) {
+
+    const [region, setRegion] = useState('')
+    const [searchValue, setSearchValue] = useState('')
 
     const handleChange = (e) => {
-        console.log(e.target.value)
-        getSearchValue(e.target.value);
+        setSearchValue(e.target.value);
+        filterCountries(searchValue, region);
+    }
+
+    const handleOptionChange = (e) => {
+        setRegion(e.target.value);
+        setSearchValue('');
+        filterCountries('', e.target.value);
+        
+        
     }
 
     return (
         <div className='search'>
             <div className='search__box'>
-                <i class="fa fa-search search__icon" aria-hidden="true"></i>
-                <input onChange={handleChange} className='search__input' type="text" placeholder='Search for a country...'/>
+                <i className="fa fa-search search__icon" aria-hidden="true"></i>
+                <input value={searchValue}  onChange={handleChange} className='search__input' type="text" placeholder='Search for a country...'/>
             </div>
 
-            <select className='search__select'>
-                <option>Filter by region</option>
-                <option>Africa</option>
-                <option>America</option>
-                <option>Asia</option>
-                <option>Europe</option>
-                <option>Oceania</option>
+            <select onChange={handleOptionChange} className='search__select'>
+                <option className='search__select-option' value=''>Filter by region</option>
+                <option className='search__select-option' value='africa'>Africa</option>
+                <option className='search__select-option' value='americas'>Americas</option>
+                <option className='search__select-option' value='asia'>Asia</option>
+                <option className='search__select-option' value='europe'>Europe</option>
+                <option className='search__select-option' value='oceania'>Oceania</option>
             </select>
        
             

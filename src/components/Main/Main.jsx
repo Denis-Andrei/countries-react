@@ -19,15 +19,20 @@ export default function Main() {
         })
     }, [])
 
-    const getSearchValue = (value) => {
-        let filteredCountries = allCountries.filter(country => country.name.toLowerCase().includes(value.toLowerCase()) || country.capital.toLowerCase().includes(value.toLowerCase()))
-        console.log('FC',filteredCountries)
+    const filterCountries = (searchValue, optionValue) => {
+        //filter countries by region
+        let filteredCountriesByRegion = allCountries.filter(country => optionValue !== '' ? country.region.toLowerCase() === optionValue.toLowerCase() : allCountries)
+
+        //filter countries by search value and region
+        let filteredCountries = filteredCountriesByRegion.filter(country => searchValue !== '' ? country.name.toLowerCase().includes(searchValue.toLowerCase()) || country.capital.toLowerCase().includes(searchValue.toLowerCase()) : filteredCountriesByRegion )
+        
+        //update state of the countries
         setCountries(filteredCountries);
     } 
 
     return (
         <div className='main'>
-            <Search getSearchValue={getSearchValue}/>
+            <Search filterCountries={filterCountries}/>
             <Countries countries={countries}/>
         </div>
     )
