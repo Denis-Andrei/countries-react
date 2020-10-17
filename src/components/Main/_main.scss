@@ -1,6 +1,10 @@
 @import '../../assets/main.scss';
 
 .main{
-    margin: 5rem 5%;
+    padding: 5rem 5%;
     background-color: $LM-very-light-gray;
+
+    @media screen and (max-width: 600px){
+        padding: 5rem 0;
+    }
 }
