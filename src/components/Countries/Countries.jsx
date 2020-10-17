@@ -2,7 +2,7 @@ import React from 'react'
 import Country from '../Country/Country'
 import './_countries.scss'
 
-export default function Countries({countries}) {
+export default function Countries({countries, countryClicked}) {
 
     const formatNumber = (number) => {
         return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
@@ -19,6 +19,7 @@ export default function Countries({countries}) {
                     capital={country.capital}
                     region={country.region}
                     population={formatNumber(country.population)}
+                    countryClicked={countryClicked}
                 />)
             }
         </div>

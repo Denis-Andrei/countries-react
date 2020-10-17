@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import './_search.scss';
 
 export default function Search({filterCountries}) {

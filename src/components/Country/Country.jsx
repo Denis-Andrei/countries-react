@@ -1,11 +1,16 @@
 import React from 'react'
 import './_country.scss';
 
-export default function Country({name, capital,population,region,flag}) {
+export default function Country({name, capital,population,region,flag, countryClicked}) {
+
+    const handleClickCountry = (e) => {
+        let countryName = e.currentTarget.lastChild.firstChild.innerHTML.trim();
+        countryClicked(countryName, true)
+    }
+
     return (
 
-            
-    <div className='country'>
+    <div onClick={handleClickCountry} className='country'>
             <img className='country__flag' src={flag} alt=""/>
 
             <div className='country__info'>
