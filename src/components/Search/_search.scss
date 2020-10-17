@@ -6,7 +6,7 @@
     color: $LM-dark-gray;
     padding: 0 3rem;
 
-    @media screen and (max-width: 700px){
+    @media screen and (max-width: 800px){
         flex-direction: column;
     }
 
@@ -29,9 +29,9 @@
         box-shadow: 0px 0px 3px $LM-dark-gray;
 
         @media screen and (max-width: 900px){
-            width: 25rem;
+            width: 23rem;
         }
-        @media screen and (max-width: 700px){
+        @media screen and (max-width: 800px){
             margin: 1rem 0;
         }
         @media screen and (max-width: 400px){

@@ -14,6 +14,10 @@ export default function DetailedCountry({goBackState, countries, countryClicked}
         countryClicked(countryName, true)
     }
 
+    const formatNumber = (number) => {
+        return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+    }
+
     return (
         <div>
             {
@@ -34,7 +38,7 @@ export default function DetailedCountry({goBackState, countries, countryClicked}
                                 <div className="detailedCountry__info">
                                     <div className="detailedCountry__info-left">    
                                         <p><span className='detailedCountry__info-title'>Native Name: </span>{country.nativeName}</p>
-                                        <p><span className='detailedCountry__info-title'>Population: </span>{country.population}</p>
+                                        <p><span className='detailedCountry__info-title'>Population: </span>{formatNumber(country.population)}</p>
                                         <p><span className='detailedCountry__info-title'>Region: </span>{country.region}</p>
                                         <p><span className='detailedCountry__info-title'>Sub Region: </span>{country.subregion}</p>
                                         <p><span className='detailedCountry__info-title'>Capital: </span>{country.capital}</p>
