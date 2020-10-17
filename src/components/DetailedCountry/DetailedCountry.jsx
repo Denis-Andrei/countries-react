@@ -42,7 +42,7 @@ export default function DetailedCountry({goBackState, countries, countryClicked}
                                     <div className="detailedCountry__info-right"> 
                                         <p><span className='detailedCountry__info-title'>Top Level Domain: </span>{country.topLevelDomain}</p>
                                         <p><span className='detailedCountry__info-title'>Currencies: </span>{country.currencies.map(currency => currency.name)}</p>
-                                        <p><span className='detailedCountry__info-title'>Languages: </span>{country.languages.map(language => language.name)}</p>
+                                        <p><span className='detailedCountry__info-title'>Languages: </span>{country.languages.map((language,index) => index === country.languages.length -1 ? ` ${language.name}` : ` ${language.name},`)}</p>
                                     </div>
                                 </div>
 

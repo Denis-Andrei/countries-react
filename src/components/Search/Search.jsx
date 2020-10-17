@@ -15,8 +15,6 @@ export default function Search({filterCountries}) {
         setRegion(e.target.value);
         setSearchValue('');
         filterCountries('', e.target.value);
-        
-        
     }
 
     return (

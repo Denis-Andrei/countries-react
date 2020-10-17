@@ -2,11 +2,14 @@
 
 .country{
     width: 25rem;
-    margin: 3rem 0;
+    margin: 0 3rem 3rem 3rem ;
     background-color: #fff;
     box-shadow: 0px 0px 3px $LM-dark-gray;
     border-radius: 5px;
     cursor: pointer;
+    @media screen and (max-width: 700px){
+        width: 32rem;
+    }
     
     &__info{
         padding: 1rem 2rem;

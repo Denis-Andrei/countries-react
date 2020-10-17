@@ -35,6 +35,9 @@ export default function Main() {
     // }, [])
 
     const filterCountries = (searchValue, optionValue) => {
+        //prevent displaying wrong components
+        setGoBack(false);
+
         //filter countries by region
         let filteredCountriesByRegion = allCountries.filter(country => optionValue !== '' ? country.region.toLowerCase() === optionValue.toLowerCase() : allCountries)
 
